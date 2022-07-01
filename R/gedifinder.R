@@ -5,7 +5,9 @@ concept_ids <- list(
   GEDI01_B.002 = "C1908344278-LPDAAC_ECS",
   GEDI02_A.002 = "C1908348134-LPDAAC_ECS",
   GEDI02_B.002 = "C1908350066-LPDAAC_ECS",
-  # TODO: Add concept IDs for the new levels
+  GEDI03_X.002 = "C2153683336-ORNL_CLOUD", # TODO: What product was this? A or B?
+  GEDI04_A.001 = "C2217340612-ORNL_CLOUD",
+  GEDI04_A.002 = "C2191500133-ORNL_CLOUD"
 )
 
 #' GEDI finder
