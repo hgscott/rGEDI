@@ -4,7 +4,8 @@ concept_ids <- list(
   GEDI02_B.001 = "C1656767133-LPDAAC_ECS",
   GEDI01_B.002 = "C1908344278-LPDAAC_ECS",
   GEDI02_A.002 = "C1908348134-LPDAAC_ECS",
-  GEDI02_B.002 = "C1908350066-LPDAAC_ECS"
+  GEDI02_B.002 = "C1908350066-LPDAAC_ECS",
+  # TODO: Add concept IDs for the new levels
 )
 
 #' GEDI finder
@@ -76,6 +77,7 @@ gedifinder <- function(product,
   bbox <- paste(ul_lon, lr_lat, lr_lon, ul_lat, sep = ",")
 
   # Granules search url pattern
+  # TODO: Add other URL format
   url_format <- paste0(
     "https://cmr.earthdata.nasa.gov/search/granules.json?",
     "pretty=true&provider=LPDAAC_ECS&page_size=2000&concept_id=%s",
