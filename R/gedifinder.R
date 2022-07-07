@@ -4,7 +4,10 @@ concept_ids <- list(
   GEDI02_B.001 = "C1656767133-LPDAAC_ECS",
   GEDI01_B.002 = "C1908344278-LPDAAC_ECS",
   GEDI02_A.002 = "C1908348134-LPDAAC_ECS",
-  GEDI02_B.002 = "C1908350066-LPDAAC_ECS"
+  GEDI02_B.002 = "C1908350066-LPDAAC_ECS",
+  GEDI03.002 = "C2153683336-ORNL_CLOUD",
+  GEDI04_A.001 = "C2217340612-ORNL_CLOUD",
+  GEDI04_A.002 = "C2191500133-ORNL_CLOUD"
 )
 
 #' GEDI finder
@@ -74,15 +77,23 @@ gedifinder <- function(product,
                        daterange = NULL) {
   page <- 1
   bbox <- paste(ul_lon, lr_lat, lr_lon, ul_lat, sep = ",")
+  
+  # Set the provider based on the product
+  if (product == "GEDI03" || product == "GEDI04_A" || product == "GEDI_04B") {
+    provider <- "ORNL_CLOUD"
+  } else {
+    provider <- "LPDAAC_ECS"
+  }
 
   # Granules search url pattern
   url_format <- paste0(
     "https://cmr.earthdata.nasa.gov/search/granules.json?",
-    "pretty=true&provider=LPDAAC_ECS&page_size=2000&concept_id=%s",
+    "pretty=true&provider=%s&page_size=2000&concept_id=%s",
     "&bounding_box=%s"
   )
   request_url <- sprintf(
     url_format,
+    provider,
     concept_ids[paste0(product, ".", version)],
     bbox
   )
