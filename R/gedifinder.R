@@ -79,7 +79,7 @@ gedifinder <- function(product,
   bbox <- paste(ul_lon, lr_lat, lr_lon, ul_lat, sep = ",")
   
   # Set the provider based on the product
-  if (product == "GEDI03" || product == "GEDI04_A" || product == "GEDI_04B") {
+  if (product == "GEDI03" || product == "GEDI04_A" || product == "GEDI04_B") {
     provider <- "ORNL_CLOUD"
   } else {
     provider <- "LPDAAC_ECS"
