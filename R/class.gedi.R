@@ -49,7 +49,7 @@ gedi.level2b <- setClass(
   slots = list(h5 = "H5File")
 )
 
-#' Class for GEDI level3
+#' Class for GEDI level3 # FIXME: Level3 is NOT an hdf5 file, is tif
 #'
 #' @slot h5 Object of class [`H5File`][hdf5r::H5File-class] from `hdf5r` package containing the
 #'GEDI level3 products
@@ -63,6 +63,22 @@ gedi.level3 <- setClass(
   Class="gedi.level3",
   slots = list(h5 = "H5File")
 )
+
+#' Class for GEDI level4A
+#'
+#' @slot h5 Object of class [`H5File`][hdf5r::H5File-class] from `hdf5r` package containing the
+#'GEDI level4A product, aboveground biomass density (ABGD; in Mg/ha)
+#'
+#' @seealso [`H5File`][hdf5r::H5File-class] in the `hdf5r` package and
+#' \url{https://daac.ornl.gov/GEDI/guides/GEDI_L3_LandSurface_Metrics_V2.html}
+#'
+#' @import methods
+#' @export
+gedi.level4a <- setClass(
+  Class="gedi.level4a",
+  slots = list(h5 = "H5File")
+)
+
 
 #' Class for GEDI Full-Waveform Simulation
 #'
