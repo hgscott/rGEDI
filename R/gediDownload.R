@@ -108,7 +108,7 @@ gediDownloadFile = function(url, outdir, overwrite, buffer_size, netrc, timeout)
         })
     message("Connected successfully, downloading...")
     headers=rawToChar(curl::handle_data(h)$headers)
-    total_size=as.numeric(gsub("[^\u00e7]*Content-Length: ([0-9]+)[^\u00e7]*","\\1",x=headers, perl = T))
+    total_size=as.numeric(gsub("[^\u00e7]*Content-Length: ([0-9]+)[^\u00e7]*","\\1",x=headers, perl = T)) # FIXME: Returning NA for L3
     while(TRUE) {
       message(sprintf("\rDownloading... %.2f/%.2fMB (%.2f%%)    ",
                       resume_from/1024.0/1024.0,
