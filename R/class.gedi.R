@@ -49,6 +49,21 @@ gedi.level2b <- setClass(
   slots = list(h5 = "H5File")
 )
 
+#' Class for GEDI level3
+#'
+#' @slot h5 Object of class [`H5File`][hdf5r::H5File-class] from `hdf5r` package containing the
+#'GEDI level3 products
+#'
+#' @seealso [`H5File`][hdf5r::H5File-class] in the `hdf5r` package and
+#' \url{https://daac.ornl.gov/GEDI/guides/GEDI_L3_LandSurface_Metrics_V2.html}
+#'
+#' @import methods
+#' @export
+gedi.level2b <- setClass(
+  Class="gedi.level3",
+  slots = list(h5 = "H5File")
+)
+
 #' Class for GEDI Full-Waveform Simulation
 #'
 #' @slot h5 Object of class H5File from \emph{hdf5r} package package containing the simulated
