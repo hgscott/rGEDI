@@ -59,7 +59,7 @@ gedi.level2b <- setClass(
 #'
 #' @import methods
 #' @export
-gedi.level2b <- setClass(
+gedi.level3 <- setClass(
   Class="gedi.level3",
   slots = list(h5 = "H5File")
 )
